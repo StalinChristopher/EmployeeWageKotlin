@@ -6,6 +6,7 @@ import com.employeewage.dailyWage
 
 fun main(){
     println("Welcome to employee wage problem")
-    var dailyWage = dailyWage()
+    var empAttendance = attendance()
+    var dailyWage = dailyWage(empAttendance)
     println("Today's wage of the employee is $dailyWage")
 }
