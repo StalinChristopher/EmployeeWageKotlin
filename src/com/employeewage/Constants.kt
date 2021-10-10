@@ -8,4 +8,5 @@ object Employee{
     const val FULL_TIME_WORKING_HOURS = 8
     const val PART_TIME_WORKING_HOURS = 4
     const val WORKING_DAYS_MONTH = 20
+    const val WORKING_HOURS_MONTH = 100
 }
