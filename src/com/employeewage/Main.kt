@@ -1,11 +1,15 @@
 package com.main
 
 import com.employeewage.*
-import com.employeewage.CheckAttendance.attendance
 
 fun main(){
     println("Welcome to employee wage problem")
-    Employee.computeWage("TCS",20,25,90)
-    Employee.computeWage("Suzuki", 25,27,85)
+    var tcs : EmployeeWage = EmployeeWage("TCS",25,8,20,80)
+    tcs.computeWage()
+    println(tcs)
+    println()
+    var jio : EmployeeWage = EmployeeWage("JIO",15,10,25,110)
+    jio.computeWage()
+    println(jio)
 
 }
