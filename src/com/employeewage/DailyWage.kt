@@ -1,13 +1,13 @@
 package com.employeewage
 
-import com.employeewage.CheckAttendance.attendance
+object DailyWage{
+    fun dailyWage(employeeType: Int): Pair<Int,Int>{
+        var dailyWage = when(employeeType){
+            EmployeeWage.FULL_TIME -> {Pair(EmployeeWage.FULL_TIME_WORKING_HOURS * EmployeeWage.WAGE_PER_HOUR,EmployeeWage.FULL_TIME_WORKING_HOURS)}
+            EmployeeWage.PART_TIME -> {Pair(EmployeeWage.PART_TIME_WORKING_HOURS * EmployeeWage. WAGE_PER_HOUR,EmployeeWage.PART_TIME_WORKING_HOURS)}
+            else -> {Pair(0,0)}
+        }
+        return  dailyWage
 
-fun dailyWage(employeeType: Int): Pair<Int,Int>{
-    var dailyWage = when(employeeType){
-        Employee.FULL_TIME -> {Pair(Employee.FULL_TIME_WORKING_HOURS * Employee.WAGE_PER_HOUR,Employee.FULL_TIME_WORKING_HOURS)}
-        Employee.PART_TIME -> {Pair(Employee.PART_TIME_WORKING_HOURS * Employee. WAGE_PER_HOUR,Employee.PART_TIME_WORKING_HOURS)}
-        else -> {Pair(0,0)}
     }
-    return  dailyWage
-
 }

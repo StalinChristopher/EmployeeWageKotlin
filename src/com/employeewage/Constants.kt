@@ -1,6 +1,6 @@
 package com.employeewage
 
-object Employee{
+object EmployeeWage{
     const val FULL_TIME = 1
     const val PART_TIME = 2
     const val IS_ABSENT = 0
