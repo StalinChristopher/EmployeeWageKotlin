@@ -4,8 +4,8 @@ import com.employeewage.CheckAttendance.attendance
 
 fun dailyWage(employeeType: Int): Int{
     var dailyWage = when(employeeType){
-        FULL_TIME -> {FULL_TIME_WORKING_HOURS * WAGE_PER_HOUR}
-        PART_TIME -> {PART_TIME_WORKING_HOURS * WAGE_PER_HOUR}
+        Employee.FULL_TIME -> {Employee.FULL_TIME_WORKING_HOURS * Employee.WAGE_PER_HOUR}
+        Employee.PART_TIME -> {Employee.PART_TIME_WORKING_HOURS * Employee.WAGE_PER_HOUR}
         else -> {0}
     }
     return  dailyWage
