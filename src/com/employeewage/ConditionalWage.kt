@@ -11,7 +11,7 @@ object ConditionalWage{
             totalDays++
             println("\nDay $totalDays")
             var empType = attendance()
-            var result = DailyWage.dailyWage(empType)
+            var result = DailyWage.dailyWage(empType,EmployeeWage.WAGE_PER_HOUR)
             var dailywage = result.first
             var workingHours = result.second
             totalHours +=workingHours
