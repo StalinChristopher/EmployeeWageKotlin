@@ -29,9 +29,11 @@ class EmployeeWage() : EmployeeBuilder {
             totalHours += workingHours
             totalWage += dailywage
             println("Hours worked today : $workingHours \tWages earned today : $dailywage ")
+            companyWage.dailyWageList.add(dailywage)
         }
         println("\nTotal days worked : $totalDays")
         println("Total hours worked : $totalHours")
+        println(companyWage.dailyWageList)
         return totalWage
     }
 }
