@@ -1,20 +1,20 @@
 package com.employeewage
 
-class EmployeeWage() {
+class EmployeeWage() : EmployeeBuilder {
     var companyList = mutableListOf<CompanyWage>()
 
-    fun addCompany(company : String, wagePerHour : Int, workingHoursPerDay : Int, noOfWorkingDays : Int, noOfWorkingHoursPerMonth : Int){
+    override fun addCompany(company : String, wagePerHour : Int, workingHoursPerDay : Int, noOfWorkingDays : Int, noOfWorkingHoursPerMonth : Int){
         companyList.add(CompanyWage(company,wagePerHour,workingHoursPerDay,noOfWorkingDays,noOfWorkingHoursPerMonth))
     }
 
-    fun compute(){
+    override fun compute(){
         for (company in companyList){
             company.totalWage = computeWage(company)
             println(company)
         }
     }
 
-    fun computeWage(companyWage: CompanyWage) :Int{
+    private fun computeWage(companyWage: CompanyWage) :Int{
         var totalDays = 0
         var totalHours = 0
         var totalWage = 0
