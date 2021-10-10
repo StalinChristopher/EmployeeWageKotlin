@@ -3,9 +3,12 @@ package com.employeewage
 class EmployeeWage() : EmployeeBuilder {
 //    var companyList = mutableListOf<CompanyWage>()
     var companyList : ArrayList<CompanyWage> = ArrayList()
+    var map : HashMap<String,CompanyWage> = HashMap()
 
     override fun addCompany(company : String, wagePerHour : Int, workingHoursPerDay : Int, noOfWorkingDays : Int, noOfWorkingHoursPerMonth : Int){
-        companyList.add(CompanyWage(company,wagePerHour,workingHoursPerDay,noOfWorkingDays,noOfWorkingHoursPerMonth))
+        var newCompany = CompanyWage(company,wagePerHour,workingHoursPerDay,noOfWorkingDays,noOfWorkingHoursPerMonth)
+        companyList.add(newCompany)
+        map[company] = newCompany
     }
 
     override fun compute(){
@@ -13,6 +16,10 @@ class EmployeeWage() : EmployeeBuilder {
             company.totalWage = computeWage(company)
             println(company)
         }
+    }
+
+    override fun getCompanyTotalWage(companyName: String) : Int{
+        return map[companyName]?.totalWage ?: -1
     }
 
     private fun computeWage(companyWage: CompanyWage) :Int{
