@@ -1,10 +1,10 @@
 package com.employeewage
 
 object DailyWage{
-    fun dailyWage(employeeType: Int, wagePerHour : Int): Pair<Int,Int>{
+    fun dailyWage(employeeType: Int, wagePerHour : Int, workingHoursPerDay : Int): Pair<Int,Int>{
         var dailyWage = when(employeeType){
-            EmployeeWage.FULL_TIME -> {Pair(EmployeeWage.FULL_TIME_WORKING_HOURS * wagePerHour,EmployeeWage.FULL_TIME_WORKING_HOURS)}
-            EmployeeWage.PART_TIME -> {Pair(EmployeeWage.PART_TIME_WORKING_HOURS * wagePerHour,EmployeeWage.PART_TIME_WORKING_HOURS)}
+            EmployeeWageConstants.FULL_TIME -> {Pair(workingHoursPerDay * wagePerHour,workingHoursPerDay)}
+            EmployeeWageConstants.PART_TIME -> {Pair((workingHoursPerDay/2) * wagePerHour,workingHoursPerDay/2)}
             else -> {Pair(0,0)}
         }
         return  dailyWage
